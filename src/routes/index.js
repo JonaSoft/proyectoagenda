@@ -12,4 +12,10 @@ router.get('/about', (req, res) => {
     res.render('about');
 });
 
+router.get('/calendar',(req,res)=>{
+    res.render('calendar/calendar');
+    //res.send('calendario');
+    //console.log('calendario')
+})
+
 module.exports = router;

@@ -8,10 +8,11 @@ const exphbs = require('express-handlebars');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const flash = require('connect-flash');
+const passport = require('passport');
 //Initialization
 const app = express();
 require('./database');
-
+require('./config/passport');
 //Settings
 app.set('port', process.env.PORT || 3001);
 app.set('views', path.join(__dirname, 'views'));
@@ -37,11 +38,21 @@ app.use(session({
     saveUninitialized: true
 }));
 
+//configuraciones de passport, debe ir después de app.use(session)
+app.use(passport.initialize());
+//para utilizar la session  de arriba definida por express
+app.use(passport.session());
+
 app.use(flash());
+
 //Global variables
-app.use((req, res, next) =>{
+app.use((req, res, next) => {
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
+    res.locals.error = req.flash('error');
+    //cuando passport autentica un usuario guarda el valor dentro de req
+    //lo guardamos en la variable local 'user'
+    res.locals.user = req.user || null;
     next();
 })
 
@@ -50,6 +61,7 @@ app.use((req, res, next) =>{
 app.use(require('./routes/index'));
 app.use(require('./routes/notas'));
 app.use(require('./routes/users'));
+//app.use(require('./routes/calendar'));
 
 
 //Static Files

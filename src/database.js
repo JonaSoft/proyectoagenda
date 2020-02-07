@@ -1,7 +1,7 @@
 /*jshint esversion: 8 */
 const mongoose = require('mongoose');
 //conectando a base de datos
-mongoose.connect('mongodb://localhost/notas', {
+mongoose.connect('mongodb://localhost/agenda', {
         useNewUrlParser: true,
         useCreateIndex: true,
         useUnifiedTopology: true

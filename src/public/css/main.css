@@ -1,3 +1,7 @@
+html{
+    min-height: 100%;
+    position: relative;
+}
 body {
     background: #c31432;
     /* fallback for old browsers */
@@ -5,4 +9,23 @@ body {
     /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #240b36, #c31432);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+;
+.logo {
+    width: 25px;
+    height: 25px
+}
+.nombreusuario{
+    font-size:22px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    
+}
+footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    font-size: 18px;
+    background-color: #050505,
 }
