@@ -14,18 +14,11 @@
         <a class="nav-link" href="/about">About Us</a>
       </li>
     </ul>
-    <ul class="navbar-nav  ml-auto">
+    <ul class="navbar-nav  text-right ml-auto">
       {{#if user}}
-        <li class="nav-item">
-            <span class="nav-link text-primary">
-              <span class="text-white">Hello </span>
-               <span class ="text-success mx-3">{{user.name}}</span>
-              <span class="text-white">!!!!! </span> 
-            </span>
-        </li>
         <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Notes
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+          <span class="ml-auto">User:</span>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <a class="dropdown-item" href="/notas">All Notes</a>
@@ -35,6 +28,9 @@
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="/users/logout">Logout</a>
         </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-white" href="#">{{user.name}}</a>
       </li>
       {{else}}
        <li class="nav-item">

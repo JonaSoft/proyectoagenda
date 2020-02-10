@@ -15,7 +15,11 @@ router.get('/about', (req, res) => {
 router.get('/calendar',(req,res)=>{
     res.render('calendar/calendar');
     //res.send('calendario');
-    //console.log('calendario')
+    console.log('calendario')
 })
-
+router.get('/calendar/all',(req,res)=>{
+    res.render('calendar/calendar');
+    //res.send('calendario');
+    console.log('calendario todos los eventos');
+})
 module.exports = router;

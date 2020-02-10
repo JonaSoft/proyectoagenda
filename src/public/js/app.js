@@ -5,7 +5,8 @@ class EventManager {
     }
 
     actualizar(){        
-        this.urlBase = "/events"
+        //this.urlBase = "/events"
+        this.urlBase = "/calendar"
         this.obtenerDataInicial()
         this.inicializarFormulario()
         this.guardarEvento()

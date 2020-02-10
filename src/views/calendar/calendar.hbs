@@ -1,36 +1,47 @@
-<div class="headerCalendar">Mi Agenda Personal</div>
+<div class="headerCalendar">Agenda Labores A.S.I. </div>
     <div class="dataContainer">
-      <div class="calendarDataContainer">
-        <div class="mainCalendarContainer">
-          <div class="calendarContainer">
-            <div class="calendario"></div>
-          </div>
+        <div class="container">
+            <div class="row">
+              <div class="container-fluid d-flex justify-content-center col-md-10">
+                  <div class="calendarDataContainer">
+                      <div class="mainCalendarContainer">
+                        <div class="calendarContainer">
+                          <div class="calendario"></div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-2">
+                   <div class="container-fluid form-group">
+                      <div class="">
+                        <div class="formTitle">Programar Evento</div>
+                        <hr>
+                        <div class="form-inputs">
+                              <input type="text" id="titulo" placeholder="Nombre del evento"/>
+                              <input type="text" id="start_date" placeholder="Fecha de inicio"/>
+                              <div class="eventDuration">
+                                <input type="checkbox" id="allDay" class="radio-input"/>
+                                <label class="duration-label" for="allDay">Día completo</label>
+                              </div>
+                              <input type="text" id="end_date" placeholder="Fecha fin"/>
+                              <div class="form-group">
+                                <input type="text" id="start_hour" placeholder="Hora de inicio" class="timepicker hour-input left"/>
+                                <input type="text" id="end_hour" placeholder="Hora fin" class="timepicker hour-input right"/>
+                              </div>
+                              <button id="save" class="addButton">Añadir evento</button>
+                        </div>
+                        <div id="deleteEvent" class="delete">
+                          <div class="drop-event">Eliminar evento</div>
+                          <img src="/img/delete.png"/>
+                        </div>
+                        <div class="logout-container">
+                          <img class="logout-image" src="/img/logout.png"/>
+                          <div class="logoutText" id="logout"><a href="#"  style='text-decoration:none;color:white;'>Cerrar Sesión</a></div>
+                        </div>
+                      </div>
+                   </div>
+              </div>
+            </div>  
         </div>
-      </div>
-      <div class="formContainer">
-        <div class="formTitle">Programar Evento</div>
-        <div class="separator"></div>
-        <div class="form-inputs">
-          <input type="text" id="titulo" placeholder="Nombre del evento"/>
-          <input type="text" id="start_date" placeholder="Fecha de inicio"/>
-          <div class="eventDuration">
-            <input type="checkbox" id="allDay" class="radio-input"/>
-            <label class="duration-label" for="allDay">Día completo</label>
-          </div>
-          <input type="text" id="end_date" placeholder="Fecha fin"/>
-          <div class="form-group">
-            <input type="text" id="start_hour" placeholder="Hora de inicio" class="timepicker hour-input left"/>
-            <input type="text" id="end_hour" placeholder="Hora fin" class="timepicker hour-input right"/>
-          </div>
-          <button id="save" class="addButton">Añadir evento</button>
-        </div>
-        <div id="deleteEvent" class="delete">
-          <div class="drop-event">Eliminar evento</div>
-          <img src="/img/delete.png"/>
-        </div>
-        <div class="logout-container">
-          <img class="logout-image" src="/img/logout.png"/>
-          <div class="logoutText" id="logout"><a href="#"  style='text-decoration:none;color:white;'>Cerrar Sesión</a></div>
-        </div>
-      </div>
+        
     </div>
