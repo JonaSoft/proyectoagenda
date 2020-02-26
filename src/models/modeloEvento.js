@@ -4,6 +4,7 @@ const Schema = mongoose.Schema
 
 let UserSchema = new Schema({
   //id: { type: Number, required: true, unique: true},
+  _id: {type: String, required: false},
   title: { type: String, required: true },
   allDay: { type: Boolean},
   start:{ type:Date, required:true },

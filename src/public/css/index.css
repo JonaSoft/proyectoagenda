@@ -7,25 +7,24 @@
 
 
 /*html {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  background: url('back.jpeg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family: 'Kaushan Script', cursive;
-  font-family: 'Neucha', cursive;
+    width: 100%;
+    height: 1200px;
+    background-color: black;
 }*/
 
-body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  background: url('../img/avion5.jpg');
-  background-size:cover;
-  opacity:0.90
+.fondomain {
+    width: 100%;
+    height: 1200px;
+    margin: 0px;
+    background: url('../img/avion5.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.95
+}
 
+nav {
+    opacity: 0.95
 }
 
 .headerCalendar {
@@ -79,6 +78,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    opacity: 0.75
 }
 
 .formTitle {
@@ -97,7 +97,7 @@ body {
     height: 1px;
     background: #FFFFFF;
 }
-
+/*
 .form-inputs {
     display: flex;
     flex-direction: column;
@@ -124,7 +124,7 @@ input {
     display: flex;
     justify-content: center;
     align-items: center;
-}
+}*/
 
 .hour-input {
     width: 48%;
@@ -220,21 +220,67 @@ input {
     background: #009CC0;
 }
 
-.notas{
-    font-size:16px;
-    font-family: Tahoma, sans-serif,Verdana, Geneva ;
+.notas {
+    font-size: 16px;
+    font-family: Tahoma, sans-serif, Verdana, Geneva;
     margin-top: 3px
-   
-    
 }
-.bordernotas{
+
+.bordernotas {
     border: 1px solid rgb(168, 164, 164);
-    border-radius:15px 15px 15px 15px;
+    border-radius: 15px 15px 15px 15px;
     min-height: 150px;
+    opacity: 0.75
 }
 
-
-
-
-
-
+.usuario {
+    color: yellow;
+    font-size: 14px;
+    font-family: tahoma;
+}
+.textobuscar{
+    font-size: 20px;
+    font-family: Tahoma;
+}
+.tituloform{
+    font-size:1rem;   
+}
+.formbusqueda {
+    background: #0B173B;
+    color: white;
+    width: 100%;
+    min-width: 220px;
+    height: auto;
+    font-size: 12px;
+    font-family: cursive;
+    border-radius: 5px 5px 5px 5px;
+    padding: 5px;
+    opacity: 0.25;
+    /*margin-top: 10px*/
+    opacity: 0.85
+}
+.inputform {
+    width: 75px;
+    text-transform: uppercase;
+}
+.intoform {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-family: cursive;
+    font-size: 11px;
+    border-radius: 5px 5px 5px 5px;
+    border: 3px outset white
+}
+.intoforminput {
+    text-transform: uppercase;
+    margin-right: 5px;
+    margin-left: 5px;
+    color: #848484;
+    height: auto;
+    font-size: 14px;
+    font-family: cursive;
+    width: auto;
+    border-radius: 5px 5px 5px 5px;
+    background-color: rgb(242, 243, 156)
+}

@@ -15,6 +15,7 @@ passport.use(new LocalStrategy({
     //busca por medio del modelo de usuario el email 
     //en la base de datos
     const user = await User.findOne({ email: email });
+    console.log('de passport', user)
     if (!user) {
         //si no existe el user ejecuta callback done
         //para terminar con el proceso de autenticación

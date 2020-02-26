@@ -5,11 +5,11 @@
             <div class="card-body">
                 <div class="container-fluid ">
                     <div class="row">
-                        <div class="col-md-10">
-                        <h5 class="card-title text-dark d-flex justify-content-left">{{title}}</h5> 
+                        <div class="col-md-9">
+                        <span class="card-title text-dark d-flex justify-content-left">{{title}}</span> 
                         </div>
-                        <div class="col-md-2 text-right">
-                            <a href="notas/edit/{{_id}}" type="hidden" title="Edit"><i class="fas fa-pencil-alt"></i></a> 
+                        <div class="col-md-3 text-right">
+                            <a href="/edit/:{{_id}}" type="hidden" title="Edit"><i class="fas fa-pencil-alt"></i></a> 
                         </div>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
                 </div>
                 
                 <span>Date:</span><p class="text-primary ">{{date}}</p>
-                <form action="/notas/delete/{{_id}}?_method=DELETE" method="POST">
+                <form action="/delete/:{{_id}}?_method=DELETE" method="POST">
                     <input type="hidden" name="_method" value="DELETE">
                     <button class="btn btn-danger btn-block " type="submit" title="Delete">
                        <i class="fas fa-trash-alt"></i>
@@ -32,7 +32,7 @@
     <div class="card mx-auto">
         <div class="card-body">
             <h4> Usuario no tiene notas </h4>
-            <a href="/notas/add" class="btn btn-success btn-block">Crear Nota</a> 
+            <a href="/add" class="btn btn-success btn-block">Crear Nota</a> 
             </h4> 
         </div>
     </div>    

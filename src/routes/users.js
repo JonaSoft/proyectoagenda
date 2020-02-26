@@ -7,12 +7,13 @@ const passport = require('passport');
 
 router.get('/users/signin', (req, res) => {
     //res.send('User ingresando a la app');
+    console.log('blanco de users', req.params);
     res.render('users/signin');
 });
 // desde esta ruta se debe autenticar al usuario
 // por defecto el nombre de autenticacion a usar es 'local'
 router.post('/users/signin', passport.authenticate('local', {
-    successRedirect: '/calendar', // si autenticacion es ok pasar a /notas
+    successRedirect: '/notas', // si autenticacion es ok pasar a /notas
     failureRedirect: '/users/signin', //sino continuar o enviar al /user/signin
     failureFlash: true
 }));
@@ -58,6 +59,6 @@ router.post('/users/signup', async(req, res) => {
 });
 router.get('/users/logout', (req, res) => {
     req.logout(); // metodo de passport
-    res.redirect('/');
+    res.redirect('/users/signin');
 })
 module.exports = router;

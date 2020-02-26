@@ -1,9 +1,9 @@
 <div class="col-md-4 mx-auto">
-        <div class="card">
+        <div class="card" style="margin-top:25%;">
             <div class="card-header">
                 <h3>Edit Note!!!</h3>
                 <div class="card-body">
-                    <form action ="/notas/edit-nota/{{notas._id}}?_method=PUT" method="POST" >
+                    <form action ="/edit/:{{notas._id}}?_method=PUT" method="POST" >
                         <input type="hidden" name="_method" value="PUT">
                         <div class="form-group">
                             <input type="text"class="form-control" name="title" class="form-control" placeholder="Titulo"
