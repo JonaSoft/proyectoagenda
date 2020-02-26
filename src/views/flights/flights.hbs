@@ -1,0 +1,229 @@
+<div class="fondomain container-fluid  animated fast fadeIn">
+    <br>
+    <div class="row">
+
+        <div class="container col-lg-2 col-md-12 p-2" style="margin-left:0px;">
+
+            <div class="container col-md-12 d-flex justify-content-center inputform text-center " style="opacity:0.85;">
+                <form [formGroup]="forma" (ngSubmit)="enviarForm()" class="formbusqueda  animated  fast fadeIn">
+                    <div class="col-md-12 text-center" style="margin:auto; font-family:cursive;font-size:12px;">
+                        <span class="tituloform">Flights Report</span>
+                    </div>
+                    <div class="container-fluid intoform form-group">
+
+
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12 text-center">
+                                <label for="mcar">Market:  </label>
+                            </div>
+                            <div class="col-md-6 col-sm-12 text-center">
+                                <input type="text" id="mcar" size="4" maxlength="2" name="market" formControlName="market" /><br>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12 text-center">
+                                <label for="flight"> Flight Number: </label>
+                            </div>
+                            <div class="col-md-6 col-sm-12 text-center">
+                                <input type="text" id="flight" size="4" maxlength="4" name="flightini" formControlName="flightini" /><br>
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12 text-center">
+                                <label for="ocar">Operator: </label>
+                            </div>
+                            <div class="col-md-6 col-sm-12 text-center">
+                                <input type="text" id="ocar" size="4" maxlength="2" name="codope" formControlName="codope" /><br>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12 text-center">
+                                <label for="flightnumberoperator">Flight Operator:</label>
+                            </div>
+                            <div class="col-md-6 col-sm-12 text-center">
+                                <input type="text" id="flightnumberoperator" size="4" maxlength="4" name="flightope" formControlName="flightope" /><br>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12 text-center">
+                                <label for="origen">Origin: </label>
+                            </div>
+                            <div class="col-md-6 col-sm-12 text-center">
+                                <input type="text" id="origen" size="4" maxlength="4" name="origen" formControlName="origen" /><br>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 col-sm-12 text-center">
+                                <label for="destino">Destin: </label>
+                            </div>
+                            <div class="col-md-6 col-sm-12 text-center">
+                                <input type="text" id="destino" size="4" maxlength="4" name="destino" formControlName="destino" /><br>
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="container">
+                                <div class="col-md-3">
+                                    <label for="destino">Date: </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="container">
+                                <div class="col-md-4 text-center">
+                                    <input class="fondofecha" type="date" name="fechainit" formControlName="fechainit" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                
+                        <div class="container">
+                            <button *ngIf="view" type="submit" class="btn btn-success btn-block" style="padding:1px;font-size:12px;">VIEW
+                
+                             </button>
+                        </div>
+                        <div *ngIf="hide" class="container">
+                            <button (click)="closeTable()" type="button" class="btn btn-warning btn-block" style="padding:1px;font-size:12px;">HIDE
+                
+                             </button>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
+            <br>
+            <div class="row ">
+                <div class="container-fluid  d-flex justify-content-center">
+                
+                </div>
+            </div>
+
+
+        </div>
+        <div class="col-lg-8 col-md-12 container-fluid" style="">
+            <div class="row">
+                <div class="container-fluid col-lg-12 col-md-12">
+
+                    <app-loading *ngIf="loading" class="animated fast fideIn "></app-loading>
+                    <div *ngIf="aviso" class="container-fluid d-flex justify-content-center" style="height:25px;">
+                        <div class="row animated fadeIn fast">
+                            <div class="container-fluid d-flex justify-content-center" style="width:100%;height:250px;">
+
+                            </div>
+                            <div class="container-fluid col d-flex justify-content-center ">
+                                <div class="alert alert-info" role="alert" style="height:100px;opacity:0.85;">
+                                    <p> <img src="./assets/img/aviso.jpg" alt="" style="opacity:0.35;width:100px;height:80px;"> There are no results for these search terms</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                
+                <br>
+                <div *ngIf="mostrar" class="container-fluid col-lg-12 col-sm-12 d-flex justify-content-center animated fadeIn">
+                    <span class ="estilotitulo">LIST OF FLIGHTS</span>
+                </div>
+                <div *ngIf="mostrar" class="container-fluid col-lg-12 col-sm-12 d-flex justify-content-center animated fadeIn" style="height:auto;width:90%; margin-bottom:auto;">
+                    
+
+                    <table class="table table-responsive estilotabla">
+                         
+
+                        <thead class="" style="background-color: #0B173B; color:white;opacity:0.85;z-index:1;margin:0px;font-size:10px; width:100%;cursor:pointer;">
+                            <th> # </th>
+                            <th> FLIGHT </th>
+                            <th> ORIG </th>
+                            <th> DEST </th>
+                            <th> OPT </th>
+                            <th> DATE </th>
+                            <th> FQT </th>
+                            <th> COMMENTS </th>
+                            
+
+                            <th> DEPA </th>
+                            <th> ARRI </th>
+                            <th> F.OPT </th>
+                            <th> WEB </th>
+                            <th> CREATED </th>
+                            
+                        </thead>
+
+                        <tbody class="estilobody">
+                            
+                            <tr *ngFor=" let clientes of data; let i = index">
+                                <td scope="row"><strong></strong></td>
+                                <td class="clasepointer">
+                                    <a (click)="seeFlight(clientes.img)" title="Ver imagen capturada del vuelo" #tdvuelo>
+                                        
+                                        </a>
+                                </td>
+                                <td class="textcelda"></td>
+                                <td class="textcelda"></td>
+                                <td class="textcelda"></td>
+                                <td class="textcelda"></td>
+                                <td class="textcelda"></td>
+                                
+                                <td class="clasetextarea"></td>
+
+                                <td class="timecelda"></td>
+                                <td class="timecelda"></td>
+                                <td></td>
+                                <td class="text-center clasepointerlink"> <a (click)="buscaWeb(clientes)" title="Buscar en Web Site"><i class="fas 5x fa-globe"></i></a></td>
+                                <td></td>
+
+                            </tr>
+                        </tbody>
+
+                        <tfoot style="opacity:1;color:black;font-size:11px;height:35px;width:auto;">
+
+                        </tfoot>
+                    </table>
+
+                </div>
+
+                <!--</div>-->
+            </div>
+            <div *ngIf="mostrar" class="row align-items-center col-md-12 col-sm-12 animated fadeIn">
+                <div class="container-fluid">
+                    <!--<app-enviar-hacia></app-enviar-hacia>-->
+                    <div class="container">
+                        <div class="col-md-12  col-sm-12 text-right" style="height:auto;">
+                            <button (click)="crearExcel()" type="button" class="btn btn-large" style="opacity:0.90;">
+                                            <img src="../../../assets/img/excel.png" class="rounded" title="Descargar en Excel" width="75" height="35">
+                                        </button>
+
+                            <button (click)="enviarPrinter()" type="button" class="btn btn-large" style="opacity:0.90;">
+                                            <img src="../../../assets/img/print.png" class="rounded" title="Enviar Resultados" width="75" height="35"> 
+                                        </button>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <br>
+
+        </div>
+        <div class="container-fluid col-lg-2 col-md-12 " style="margin-top:5px;height:100%;">
+            <div class="row">
+                <div class="container-fluid  d-flex justify-content-center">
+                    <app-ciudades></app-ciudades>
+
+                </div>
+
+            </div>
+            <br>
+        </div>
+
+    </div>
+
+</div>

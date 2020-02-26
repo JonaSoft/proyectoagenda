@@ -21,6 +21,7 @@ passport.use(new LocalStrategy({
         return done(null, false, { message: 'Not user found' });
         //devuelve null para errors, sin user y un  mensaje
     } else {
+        //console.log('usuarios desde passport',user)
         //si existe ejecuta metodo matchPassword de modelo User.js
         const match = await user.matchPassword(password);
         if (match) {
@@ -56,3 +57,4 @@ passport.deserializeUser((id, done) => {
         done(err, user);
     });
 });
+module.exports = passport

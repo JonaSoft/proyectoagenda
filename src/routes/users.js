@@ -12,7 +12,7 @@ router.get('/users/signin', (req, res) => {
 // desde esta ruta se debe autenticar al usuario
 // por defecto el nombre de autenticacion a usar es 'local'
 router.post('/users/signin', passport.authenticate('local', {
-    successRedirect: '/notas', // si autenticacion es ok pasar a /notas
+    successRedirect: '/calendar', // si autenticacion es ok pasar a /notas
     failureRedirect: '/users/signin', //sino continuar o enviar al /user/signin
     failureFlash: true
 }));

@@ -3,15 +3,26 @@
     <div class="col-lg-2 col-md-4">
         <div class="card  my-3">
             <div class="card-body">
-                <h4 class="card-title text-dark d-flex justify-content-between align-items-center">
-                    {{title}} <a href="notas/edit/{{_id}}"><i class ="fas fa-edit"></i></a> 
-                </h4> 
-                <p>{{description}}</p> 
-                <p>{{date}}</p>
+                <div class="container-fluid ">
+                    <div class="row">
+                        <div class="col-md-10">
+                        <h5 class="card-title text-dark d-flex justify-content-left">{{title}}</h5> 
+                        </div>
+                        <div class="col-md-2 text-right">
+                            <a href="notas/edit/{{_id}}" type="hidden" title="Edit"><i class="fas fa-pencil-alt"></i></a> 
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container bordernotas">
+                    <p class="text-success  notas">{{description}}</p> 
+                </div>
+                
+                <span>Date:</span><p class="text-primary ">{{date}}</p>
                 <form action="/notas/delete/{{_id}}?_method=DELETE" method="POST">
                     <input type="hidden" name="_method" value="DELETE">
-                    <button class="btn btn-warning btn-block btn-sm" type="submit">
-                        Delete
+                    <button class="btn btn-danger btn-block " type="submit" title="Delete">
+                       <i class="fas fa-trash-alt"></i>
                     </button>      
                 </form>
             </div>

@@ -43,6 +43,7 @@ router.post('/notas/new-note', isAuthenticated, async(req, res) => {
     }
 });
 router.get('/notas', isAuthenticated, async(req, res) => {
+    console.log('por notas')
     //res.send('Notas from databases');
     let notas = await Note.find({ user: req.user.id }).sort({ date: 'desc' });
     //console.log(notas);

@@ -29,3 +29,71 @@ footer{
     font-size: 18px;
     background-color: #050505,
 }
+
+
+
+
+
+body{
+    width: 100%;
+   }
+   .slider{
+     background-size:cover;
+     background-position: center;
+     background-color:#0B3861;
+     width: 100%;
+   
+   }
+   .columna{
+     border:1px #313030 solid;
+   }
+   .medida{
+     height: 150px;
+     max-width: 200px;
+     min-width: 30px;
+     margin-top: 5px;
+   }
+   .medida1{
+     height: 150px;
+     max-width: 200px;
+     min-width: 50px;
+     margin-top: 5px;
+   }
+   .medida2{
+     height: 150px;
+     max-width: 200px;
+     min-width: 50px;
+     margin-top: 5px;
+   }
+   p{
+     font-size:0.9rem;
+   }
+   h5{
+      text-align: center;
+   }
+   
+   .footerfinal{
+       background-color:#151515;
+      width: 100%;
+      height:auto;
+       padding-bottom: 0px;
+      margin-bottom: 0px;
+      order:3
+   }
+   
+   #piePagina{
+      background-color: #151515;
+      width: 100%;
+      min-height: 350px;
+      height: auto;
+      padding-bottom: 0px;
+      margin-bottom: 0px;
+      color: white
+   
+   }
+   
+   p{
+      color:white;
+   
+   }
+   
